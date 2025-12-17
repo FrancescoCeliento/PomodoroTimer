@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pomodoro</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Pomodoro Timer</h1>
+
+  <div class="mode-switch">
+    <button onclick="setMode('single')">Countdown</button>
+    <button onclick="setMode('pomodoro')">Pomodoro</button>
+  </div>
+
+  <!-- MODALITÀ COUNTDOWN -->
+  <div id="single" class="card">
+    <h3>Countdown singolo</h3>
+    <div class="controls">
+      <button onclick="setSingle(25)">25</button>
+      <button onclick="setSingle(5)">5</button>
+      <button onclick="setSingle(15)">15</button>
+      <input type="number" id="customMinutes" placeholder="Min" min="1">
+    </div>
+  </div>
+
+  <!-- MODALITÀ POMODORO -->
+  <div id="pomodoro" class="card" style="display:none">
+    <h3>Modalità Pomodoro</h3>
+    <label>Work <input type="number" id="work" value="25"></label>
+    <label>Short <input type="number" id="short" value="5"></label>
+    <label>Long <input type="number" id="long" value="15"></label>
+    <label>Steps <input type="number" id="steps" value="4"></label>
+  </div>
+
+  <!-- TIMER -->
+  <div class="card">
+    <div class="status" id="status">Pronto</div>
+    <div class="timer" id="timer">00:00</div>
+    <div class="controls">
+      <button onclick="start()">Start</button>
+      <button onclick="stop()">Stop</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
+
